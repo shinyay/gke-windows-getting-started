@@ -96,7 +96,17 @@ $ gcloud iam service-accounts list --filter 'displayName:GCR from Windows Server
 
 Bind Role to Service Account
 ```
+$ gcloud projects add-iam-policy-binding (gcloud config get-value project) \
+    --member serviceAccount:(\
+      gcloud iam service-accounts list \
+        --filter='displayName:GCR from Windows Server' \
+        --format 'value(email)' ) \
+    --role roles/storage.admin
+```
 
+Verify Role
+```
+$ gcloud projects get-iam-policy (gcloud config get-value project)
 ```
 
 ## Features
