@@ -127,6 +127,11 @@ $ gcloud artifacts repositories create windows-repo \
     --description="Docker Windows Repository"
 ```
 
+Verify Repository
+```
+$ gcloud artifacts repositories list
+```
+
 ##### Windows Jumpbox Server
 
 
