@@ -67,7 +67,20 @@ $ gcloud compute firewall-rules create default-allow-rdp \
 $ gcloud compute reset-windows-password shinyay-windows
 ```
 
+#### Verify Docker Pull
+You can pull OS Base image before the host OS version.
+```
+>ver
+Microsoft Windows [Version 10.0.17763.1817]
+```
+```
+$ docker pull mcr.microsoft.com/windows/servercore:ltsc2019
+$ docker pull mcr.microsoft.com/windows/nanoserver:1809
 
+REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
+mcr.microsoft.com/windows/servercore   ltsc2019            3eaa9ebbf51f        2 weeks ago         5.25GB
+mcr.microsoft.com/windows/nanoserver   1809                47284f980c64        2 weeks ago         252MB
+```
 
 ## Features
 
