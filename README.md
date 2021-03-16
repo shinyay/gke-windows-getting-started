@@ -100,13 +100,29 @@ $ gcloud projects add-iam-policy-binding (gcloud config get-value project) \
     --member serviceAccount:(\
       gcloud iam service-accounts list \
         --filter='displayName:GCR from Windows Server' \
-        --format 'value(email)' ) \
+        --format 'value(email)') \
     --role roles/storage.admin
 ```
 
 Verify Role
 ```
 $ gcloud projects get-iam-policy (gcloud config get-value project)
+```
+
+Create Key for Service Account
+```
+$ gcloud iam service-accounts keys create key.json \
+    --iam-account (\
+      gcloud iam service-accounts list \
+        --filter="displayName:GCR from Windows Server" \
+        --format 'value(email)')
+
+```
+
+##### Windows Jumpbox Server
+gcloud Credential Helper
+```
+C:> gcloud auth configure-docker
 ```
 
 ## Features
