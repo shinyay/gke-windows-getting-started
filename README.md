@@ -119,6 +119,41 @@ $ gcloud iam service-accounts keys create key.json \
         --format 'value(email)')
 ```
 
+Create Repository
+```
+$ gcloud artifacts repositories create windows-repo \
+    --repository-format=docker \
+    --location=us-central1 \
+    --description="Docker Windows Repository"
+```
+
+##### Windows Jumpbox Server
+
+
+gcloud Credential Helper
+```
+C:> gcloud auth configure-docker
+```
+
+key.json from Client to Jumpbox
+```
+C:> echo {  "type": "service_account",......iam.gserviceaccount.com"} > key.json
+```
+
+Activate Service account
+```
+C:> gcloud auth activate-service-account --key-file key.json
+```
+
+Tag for GAR
+```
+C:> docker tag mcr.microsoft.com/windows/servercore:ltsc2019 gcr.io/[PROJECT_ID]/servercore:ltsc2019
+```
+
+Push for GAR
+```
+C:> docker push gcr.io/[PROJECT_ID]/servercore:ltsc2019
+```
 
 #### Service Account for Container Registry
 ##### Client PC
