@@ -133,11 +133,9 @@ $ gcloud artifacts repositories list
 ```
 
 ##### Windows Jumpbox Server
-
-
 gcloud Credential Helper
 ```
-C:> gcloud auth configure-docker
+C:> gcloud auth configure-docker us-central1-docker.pkg.dev
 ```
 
 key.json from Client to Jumpbox
@@ -152,12 +150,12 @@ C:> gcloud auth activate-service-account --key-file key.json
 
 Tag for GAR
 ```
-C:> docker tag mcr.microsoft.com/windows/servercore:ltsc2019 gcr.io/[PROJECT_ID]/servercore:ltsc2019
+C:> docker tag mcr.microsoft.com/windows/servercore:ltsc2019 us-central1-docker.pkg.dev/[PROJECT_ID]/windows-repo/servercore:ltsc2019
 ```
 
 Push for GAR
 ```
-C:> docker push gcr.io/[PROJECT_ID]/servercore:ltsc2019
+C:> docker push gcr.io/[PROJECT_ID]/windows-repo/servercore:ltsc2019
 ```
 
 #### Service Account for Container Registry
