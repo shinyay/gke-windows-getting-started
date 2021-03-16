@@ -94,6 +94,8 @@ $ gcloud iam service-accounts list --filter 'displayName:GAR from Windows Server
 ```
 
 Bind Role to Service Account
+- **roles/artifactregistry.admin**
+
 ```
 $ gcloud projects add-iam-policy-binding (gcloud config get-value project) \
     --member serviceAccount:(\
@@ -102,6 +104,21 @@ $ gcloud projects add-iam-policy-binding (gcloud config get-value project) \
         --format 'value(email)') \
     --role roles/artifactregistry.admin
 ```
+
+Verify Role
+```
+$ gcloud projects get-iam-policy (gcloud config get-value project)
+```
+
+Create Key for Service Account
+```
+$ gcloud iam service-accounts keys create key.json \
+    --iam-account (\
+      gcloud iam service-accounts list \
+        --filter="displayName:GAR from Windows Server" \
+        --format 'value(email)')
+```
+
 
 #### Service Account for Container Registry
 ##### Client PC
