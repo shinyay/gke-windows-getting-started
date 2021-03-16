@@ -130,6 +130,21 @@ key.json from Client to Jumpbox
 C:> echo {  "type": "service_account",......iam.gserviceaccount.com"} > key.json
 ```
 
+Activate Service account
+```
+C:> gcloud auth activate-service-account --key-file key.json
+```
+
+Tag for GCR
+```
+C:> docker tag mcr.microsoft.com/windows/servercore:ltsc2019 gcr.io/[PROJECT_ID]/servercore:ltsc2019
+```
+
+Push for GCR
+```
+C:> docker push gcr.io/[PROJECT_ID]/servercore:ltsc2019
+```
+
 ## Features
 
 - feature:1
