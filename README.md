@@ -62,6 +62,12 @@ $ gcloud compute firewall-rules create default-allow-rdp \
     --source-ranges=0.0.0.0/0
 ```
 
+#### Create Password
+```
+$ gcloud compute reset-windows-password shinyay-windows
+```
+
+
 
 ## Features
 
