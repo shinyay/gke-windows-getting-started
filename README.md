@@ -87,6 +87,12 @@ Create Service Account
 ```
 $ gcloud iam service-accounts create ce-windows-gar --display-name "GAR from Windows Server"
 ```
+
+Verify SA
+```
+$ gcloud iam service-accounts list --filter 'displayName:GAR from Windows Server' --format 'value(email)'
+```
+
 #### Service Account for Container Registry
 ##### Client PC
 Create Service Account
