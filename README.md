@@ -30,10 +30,38 @@ $ gcloud beta compute instances create shinyay-windows \
 $ gcloud compute instances get-serial-port-output shinyay-windows --zone us-central1-a
 ```
 
-#### Create Password
+#### Create Firewall Rule
+- HTTP
+- HTTPS
+- RDP
+
 ```
-$ gcloud compute reset-windows-password
+$ gcloud compute firewall-rules create default-allow-http \
+    --project=(gcloud config get-value project) \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=default \
+    --action=ALLOW \
+    --rules=tcp:80 \
+    --source-ranges=0.0.0.0/0
+$ gcloud compute firewall-rules create default-allow-https \
+    --project=(gcloud config get-value project) \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=default \
+    --action=ALLOW \
+    --rules=tcp:443 \
+    --source-ranges=0.0.0.0/0
+$ gcloud compute firewall-rules create default-allow-rdp \
+    --project=(gcloud config get-value project) \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=default \
+    --action=ALLOW \
+    --rules=tcp:3389 \
+    --source-ranges=0.0.0.0/0
 ```
+
 
 ## Features
 
