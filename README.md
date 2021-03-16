@@ -81,6 +81,16 @@ REPOSITORY                             TAG                 IMAGE ID            C
 mcr.microsoft.com/windows/servercore   ltsc2019            3eaa9ebbf51f        2 weeks ago         5.25GB
 mcr.microsoft.com/windows/nanoserver   1809                47284f980c64        2 weeks ago         252MB
 ```
+#### Service Account for Artifact Registry
+#### Service Account for Container Registry
+##### Client PC
+Create Service Account
+```
+$ gcloud iam service-accounts create ce-windows-gcr --display-name "GCR from Windows Server"
+```
+
+Bind Role to Service Account
+
 
 ## Features
 
