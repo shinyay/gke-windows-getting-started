@@ -89,8 +89,15 @@ Create Service Account
 $ gcloud iam service-accounts create ce-windows-gcr --display-name "GCR from Windows Server"
 ```
 
-Bind Role to Service Account
+Verify SA
+```
+$ gcloud iam service-accounts list --filter 'displayName:GCR from Windows Server' --format 'value(email)'
+```
 
+Bind Role to Service Account
+```
+
+```
 
 ## Features
 
