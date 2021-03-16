@@ -82,6 +82,11 @@ mcr.microsoft.com/windows/servercore   ltsc2019            3eaa9ebbf51f        2
 mcr.microsoft.com/windows/nanoserver   1809                47284f980c64        2 weeks ago         252MB
 ```
 #### Service Account for Artifact Registry
+##### Client PC
+Create Service Account
+```
+$ gcloud iam service-accounts create ce-windows-gar --display-name "GAR from Windows Server"
+```
 #### Service Account for Container Registry
 ##### Client PC
 Create Service Account
