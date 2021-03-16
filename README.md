@@ -6,6 +6,15 @@ Overview
 
 ## Demo
 ### Windows Server Jumpbox
+#### Verify Image Name
+```
+ $ gcloud compute images list \
+     --project windows-cloud \
+     --no-standard-images | grep containers
+
+```
+
+#### Create Instance
 ```
 $ gcloud beta compute instances create shinyay-windows \
     --zone=us-central1-a \
@@ -14,6 +23,11 @@ $ gcloud beta compute instances create shinyay-windows \
     --image-project=windows-cloud \
     --boot-disk-size=32GB \
     --boot-disk-type=pd-standard
+```
+
+#### Verify Instance Setup
+```
+$ gcloud compute instances get-serial-port-output shinyay-windows --zone us-central1-a
 ```
 
 ## Features
