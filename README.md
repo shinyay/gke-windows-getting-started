@@ -125,6 +125,11 @@ gcloud Credential Helper
 C:> gcloud auth configure-docker
 ```
 
+key.json from Client to Jumpbox
+```
+C:> echo {  "type": "service_account",......iam.gserviceaccount.com"} > key.json
+```
+
 ## Features
 
 - feature:1
