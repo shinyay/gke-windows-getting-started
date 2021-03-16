@@ -30,6 +30,11 @@ $ gcloud beta compute instances create shinyay-windows \
 $ gcloud compute instances get-serial-port-output shinyay-windows --zone us-central1-a
 ```
 
+#### Create Password
+```
+$ gcloud compute reset-windows-password
+```
+
 ## Features
 
 - feature:1
